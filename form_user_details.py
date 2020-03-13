@@ -53,12 +53,13 @@ class UserDetailForm(FormAction):
 
         #track intent of the input
         intent = tracker.latest_message.get("intent", {}).get("name")
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
         print(intent)
         #classify deacitvate intent
         if intent =='deactivate':
             return [BotUttered("Do you really want to exit?",tracker)]
         #affirm intent to refill form
-        elif intent =='affirm' :
+        elif intent =='affirm' and intent_confidence>0.95:
             return [self.deactivate()]
         ## continue filling form but other intents are
         else:
@@ -82,9 +83,10 @@ class UserDetailForm(FormAction):
     ) -> Dict[Text, Any]:
 
         intent = tracker.latest_message.get("intent", {}).get("name")
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
         reg_name_string = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
 
-        if intent in self.reject_intents:
+        if intent in self.reject_intents and intent_confidence>0.95:
             return {"name": None}
 
 
@@ -106,15 +108,17 @@ class UserDetailForm(FormAction):
     ) -> Dict[Text, Any]:
 
         reg_string = "^[0-3]?[0-9]/[0-3]?[0-9]/(?:[0-9]{2})?[0-9]{2}$"
-
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
         intent = tracker.latest_message.get("intent", {}).get("name")
 
-        if re.search(reg_string, value):
+        if intent in self.reject_intents and intent_confidence>0.95:
+            return {"dob": None}
+
+        if re.search(reg_string, value) :
             return {"dob": value.strip()}
 
-        elif intent in self.reject_intents:
-            return {"dob": None}
         else:
+            logger.debug("dob error")
             dispatcher.utter_message(text="Sorry, i didn't get you.\nPlease provide the DOB in valid format")
             return {"dob": None}
 
@@ -129,12 +133,14 @@ class UserDetailForm(FormAction):
         reg_phone="^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|5|6|7|8)\d)\d{6}$"
 
         intent = tracker.latest_message.get("intent", {}).get("name")
-        print(value)
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
         phone_numbers=[]
-        if intent in self.reject_intents:
+
+        if intent in self.reject_intents and intent_confidence>0.95:
             return {"phone": None}
 
         if len(value)==0:
+            dispatcher.utter_message(text="Please provide a valid input")
             return {"phone": None}
 
         elif len(value)==1:
@@ -152,6 +158,7 @@ class UserDetailForm(FormAction):
             if len(phone_numbers)>0:
                 return {"phone": phone_numbers}
             else:
+                dispatcher.utter_message(text="Sorry, i didn't get you.\nPlease provide a valid input")
                 return {"phone": None}
 
 
@@ -166,11 +173,13 @@ class UserDetailForm(FormAction):
 
         reg_email = "[^@]+@[^@]+\.[^@]+"
         intent = tracker.latest_message.get("intent", {}).get("name")
-        print(value)
-        if re.search(reg_email, value[0].strip()):
-            return {"email": value}
-        elif intent in self.reject_intents:
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
+
+        if intent in self.reject_intents and intent_confidence>0.95:
             return {"email": None}
+
+        if re.search(reg_email, value[0].strip()) :
+            return {"email": value}
         else:
             dispatcher.utter_message(text="Sorry, i didnt get you.\nPlease provide a valid input for email")
             return {"email": None}
@@ -186,8 +195,9 @@ class UserDetailForm(FormAction):
 
         intent = tracker.latest_message.get("intent", {}).get("name")
         reg_job_string = "^[a-zA-Z]+(([',. -][a-zA-Z ])?[a-zA-Z]*)*$"
+        intent_confidence = tracker.latest_message.get("intent", {}).get("confidence")
 
-        if intent in self.reject_intents:
+        if intent in self.reject_intents and intent_confidence>0.95:
             return {"job_preference": None}
 
         if re.search(reg_job_string, value.lower().strip()) and value.lower().strip() in self.jobs_list:

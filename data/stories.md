@@ -237,4 +237,34 @@
     - action_time_greeting
     - utter_services
 
+## Story from conversation with 8fc7e5c7b1324447b88ee062eeeb051b on March 12th 2020
 
+* greet
+    - action_time_greeting
+* job_apply_intern
+    - utter_intern_job_apply
+
+## New Story
+
+* greet
+    - action_time_greeting
+    - utter_services
+* job_apply_intern
+    - utter_intern_job_apply
+* trigger_apply
+    - user_detail_form
+    - form{"name":"user_detail_form"}
+    - slot{"requested_slot":"name"}
+* inputs
+    - user_detail_form
+    - slot{"name":"anton dulip"}
+    - slot{"requested_slot":"dob"}
+* inputs
+    - user_detail_form
+    - slot{"dob":"12/12/1998"}
+    - slot{"requested_slot":"phone"}
+* deactivate
+    - utter_ask_form_continue
+* deny
+    - utter_form_deactivate
+    - utter_services

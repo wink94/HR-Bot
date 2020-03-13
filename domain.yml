@@ -1,7 +1,6 @@
 session_config:
   session_expiration_time: 60.0
   carry_over_slots_to_new_session: true
-
 intents:
 - greet
 - goodbye
@@ -87,6 +86,8 @@ slots:
     type: text
   phone:
     type: list
+  requested_slot:
+    type: unfeaturized
   study_stream:
     type: unfeaturized
   university:
@@ -223,10 +224,12 @@ responses:
   - text: Do you want to continue?
   utter_goodbye:
   - text: Bye, Thank you for getting in touch with Hsenid Mobile solutions
+  utter_form_deactivate:
+  - text: "Thank you for getting in touch with Hsenid Mobile solutions\n"
   utter_iamabot:
   - text: I am a bot, powered by Hsenid.
   utter_ask_name:
-  - text: What's your first name?
+  - text: What's your name?
   utter_ask_dob:
   - text: What's your birthday (dd/mm/yyyy)?
   utter_ask_phone:
@@ -253,7 +256,6 @@ responses:
       Starting your career at Hsenid Mobile\nTell you about the company\nTell jokes"
   utter_refer_friend:
   - text: Do you like to refer a friend?
-
 actions:
 - utter_job_apply_non_specific
 - utter_hsenid_mobile_faq
@@ -291,6 +293,6 @@ actions:
 - utter_ask_FriendEmail
 - utter_help
 - utter_default
-
+- utter_form_deactivate
 forms:
 - user_detail_form

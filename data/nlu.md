@@ -1,4 +1,4 @@
-## intent: greet
+## intent:greet
 - hey
 - hello
 - hi
@@ -51,7 +51,7 @@
 - hello i'm [Bandu Samarasinha](name).
 - [Bandu Sumana](name) is here.
 
-## intent: hsenid_mobile_faq
+## intent:hsenid_mobile_faq
 - what is [Hsenid mobile](company)?
 - what is [Hsenid](company)?
 - what is [hsenid](company)?
@@ -63,17 +63,15 @@
 - can you tell me about your company?
 - i want to know your company
 
-##intent: hsenid_mobile_and_hsenid_biz_faq
+## intent:hsenid_mobile_and_hsenid_biz_faq
 - what is the difference between [hsenid mobile](company) and [hsenid biz](company)?
 - is [hsenid mobile](company) seperate from [hsenid biz](company)?
 
-## intent: job_apply_fresh_grad
+## intent:job_apply_fresh_grad
 - Hi im [windula](name). i'm looking for a Associate vacancy. what are the available positions?
 - Are there any vacancies available for fresh graduates?
 - Hello im [Pavani Perera](name), i'm [25](age) years old. i am a fresh graduate from [university of moratuwa](university), [computer science](study_stream) stream.
-currently im looking for a Associate Software Engineer position.
 - im [Alan Fernando](name), my age [20](age) years. im a recently passed out graduate [IIT](university),i studied in [information technology](study_stream) stream
-currently im looking for a Associate Engineer position.
 - Hi what are the current available openings for fresh graduates
 - Hi what are the current available openings for Associate eng.
 - hi im a fresh graduate. what are the jobs available for me?
@@ -87,15 +85,12 @@ currently im looking for a Associate Engineer position.
 - can you list job openings for freshers?
 - what are the openings for freshers.
 - i'am a freshers graduate looking for job openings.
-- 
 
-
-## intent: job_apply_non_specific
+## intent:job_apply_non_specific
 - Hi what are the current available openings?
 - Hi im [Charith](name). what are are available openings at [hsenid mobile](company).
 - hi im a fresh graduate. can you tell me what are the openings available.
 - Hi im [Hasitha](name), i'm [23](age) years old. I studied at [university of colombo](university), [software engineering](study_stream) stream.
-can you tell me what are the available options.
 - what are the available openings
 - what are vacancies available
 - i want to apply for a job
@@ -106,18 +101,15 @@ can you tell me what are the available options.
 - job openings
 - what are the available jobs at hsenid.?
 - Hi im [Nuwan](name), i'm [23](age) years old. I studied at [university of colombo](university), [software engineering](study_stream) stream.
-can you tell me what are the available options.
 - im looking for a job
 - what are the job openings you have
 - what are job openings at [hsenid](company)
 
-## intent: job_apply_intern
+## intent:job_apply_intern
 - Hi im [yuwan](name). i'm looking for a internship. what are the available positions?
 - Are there any internships available for undergraduates?
 - Hello im [ruwani fernando](name), i'm [25](age) years old. i am a undergraduate from [university of moratuwa](university), [computer science](study_stream) stream.
-currently im looking for an internship.
 - im [Alan turing](name), my age [20](age) years. im a undergraduate from [IIT](university),i studied in [information technology](study_stream) stream
-currently im looking for a internship.
 - Hi what are the current available openings for internships
 - Hi what are the current available openings for interns
 - hi im a undergraduate. what are the jobs available for me?
@@ -127,8 +119,10 @@ currently im looking for a internship.
 - can you help me to find an intern. im a recently passed out graduate from [sliit](university).
 - can you help me find a job. i completed my degree recently.
 - are there any jobs available for fresh graduates.
+- do you'll have any vacancies for interns?
+- Do you all have vacancies for interns
 
-##intent: undergraduate
+## intent:undergraduate
 - Are there any vacancies available for undergraduates?
 - hello i'm an undergraduate
 - im an undergraduate
@@ -136,38 +130,26 @@ currently im looking for a internship.
 - i am an undergrad
 - i am an undergraduate of
 
-
-## intent: job_apply_dev
+## intent:job_apply_dev
 - what are the [development](job_category) vacancies available
 - are there any [development](job_category) openings available
 - im looking for a [development](job_category) job. are there any openings available
 - im looking for a [dev](job_category:Development) job. are there any openings available
 - what are the [dev](job_category:Development) vacancies available
 - are there any [dev](job_category:Development) openings available
-- hello im [Amith](name),im looking for a [development](job_category) opening. my phone number is [0714442225](phone) 
-and my email is [amith@gmail.com](email) are there any vacancies available.
-- hello im [Amith](name),im looking for a [dev](job_category:Development) opening. my telephone number is [0774472865](phone) 
-and my email is [amith@gmail.com](email) are there any vacancies available.
+- hello im [Amith](name),im looking for a [development](job_category) opening. my phone number is [0714442225](phone)
+- hello im [Amith](name),im looking for a [dev](job_category:Development) opening. my telephone number is [0774472865](phone)
 - Hi im [piumal](name), i'm [23](age) years old. I studied at [university of colombo](university), [software engineering](study_stream) stream.
-can you tell me what are the available options. currently im looking for a [development](job_category) job. 
 - Hello im [piumal](name), i'm [23](age) years old. I studied at [university of colombo](university), [software engineering](study_stream) stream.
-can you tell me what are the available options. currently im looking for a [dev](job_category:Development) job. 
 - im [piumal](name), im [19](age) years old. I studied at [university of colombo](university), [software engineering](study_stream) stream.
-im looking for a [dev](job_category:Development) job. can you tell me what are the available options. 
 - hi i'm [saman](name).im [25](age) years old. my email is [saman@gmail.com](email). im looking for a [dev](job_category:Development) job.
 
-## intent: detailed_input_intern
-- my name is [bandula perera](name). i'm [28](age) years old. my phone number is [0728526549](phone). my email is [test@gmail.com](email). 
-my birthday is on [12/09/1992](dob). and my alternative phone number is [0774568952](alternative_phone). can you give 
-me the job openings for [Internship](job_preference).
-- my name is [uvin chandula](name). i'm [24](age) years old. my phone number is [0758501549](phone). my email is [uvin@uom.lk](email). 
-my birthday is on [31/03/1994](dob). and my alternative phone number is [0714568092](alternative_phone). can you give 
-me the job openings for [Internship](job_preference).
-- hello im [uvini chanuka](name). i'm [23](age) years old. im currently looking for an [Internship](job_preference). my email is [uvini@gmail.lk](email). 
-, and my phone number is [0714568092](phone). i have an alternative number in case [0712596314](phone).
+## intent:detailed_input_intern
+- my name is [bandula perera](name). i'm [28](age) years old. my phone number is [0728526549](phone). my email is [test@gmail.com](email).
+- my name is [uvin chandula](name). i'm [24](age) years old. my phone number is [0758501549](phone). my email is [uvin@uom.lk](email).
+- hello im [uvini chanuka](name). i'm [23](age) years old. im currently looking for an [Internship](job_preference). my email is [uvini@gmail.lk](email).
 
-
-##intent: inputs
+## intent:inputs
 - [windula](name)
 - [tiran](name)
 - [charith  wickrama](name)
@@ -239,7 +221,6 @@ me the job openings for [Internship](job_preference).
 - [Quality Assurance Apprenticeship](job_preference)
 - [Internship – Software Engineer](job_preference)
 - [Internship – Quality Assurance](job_preference)
-
 
 ## intent:affirm
 - Accept
@@ -467,7 +448,6 @@ me the job openings for [Internship](job_preference).
 - ys
 - yup
 - yyeeeh
-
 
 ## intent:mood_great
 - perfect
@@ -721,8 +701,7 @@ me the job openings for [Internship](job_preference).
 - no stop
 - stop it, i do not care!!!
 
-##intent: help
-Can you help me?
+## intent:help
 - Could you please show me what you can
 - Great, is there anything else you can do, bot?
 - How can you help me
@@ -824,8 +803,7 @@ Can you help me?
 - hello i'm [nihara](name). can you help me.
 - hey im [wizma](name). i want help
 
-
-##intent:telljoke
+## intent:telljoke
 - Can you tell a joke?
 - Can you tell me a joke.
 - Come up with a joke you think I'll find funny.
@@ -867,14 +845,13 @@ Can you help me?
 - tell me something funny, like a joke
 - you can say a jok
 
-
 ## intent:bot_challenge
 - are you a bot?
 - are you a human?
 - am I talking to a bot?
 - am I talking to a human?
 
-##intent: deactivate
+## intent:deactivate
 - deactivate
 - stop form
 - deactivate form
@@ -883,95 +860,91 @@ Can you help me?
 - exit form
 - exit
 
-
-##intent: ASE_dev
+## intent:ASE_dev
 - ASE_dev
 - /ASE_dev
 
-##intent: trigger_apply
+## intent:trigger_apply
 - trigger_apply
 - /trigger_apply
 
-## intent: trigger_reject
+## intent:trigger_reject
 - trigger_reject
 - /trigger_reject
 
-##intent: trigger_back
+## intent:trigger_back
 - trigger_back
 - /trigger_back
 
-##intent: apply_impl_support
+## intent:apply_impl_support
 - apply{"type": "impl_support"}
 - /apply{"type": "impl_support"}
 
-##intent: apply_development
+## intent:apply_development
 - apply{"type": "development"}
 - /apply{"type": "development"}
 
-##intent: apply_project_management
+## intent:apply_project_management
 - apply{"type": "project_management"}
 - /apply{"type": "development"}
 
-##intent: apply_intern
+## intent:apply_intern
 - apply{"type": "intern"}
 - /apply{"type": "intern"}
 
-
-## regex:email
-- [^@]+@[^@]+\.[^@]+
-
-## regex:phone
-- ^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|5|6|7|8)\d)\d{6}$
-
-## regex:age
-- ^([1-9]\d?)?$
-
-## regex:name
-- hi i'm [^\\s]
-- hello i'm [^\\s]
-- hey i'm [^\\s]
-- hi im [^\\s]
-- hey im [^\\s]
-- my name is [^\\s]
-
-## synonym:Development
-- Dev
-- dev
-- Developmnt
-- developmnt
-- DEV
-- DEv
-- development
-
-## synonym:Implementation
-- implementaion
-- imple
+## synonym: Fresh Graduates
+- fresh undergraduate
+- Fresh Graduate
+- fresh grad
+- newly Grad student
+- Fresher
+- new Graduated Student
+- Freshers
 
 ## synonym: Internship
-- intern
 - internship
+- intern
 - interns
 - INTERN
 - INTERNSHIP
 
-## synonym: Fresh Graduates
-- Freshers
-- fresh grad
-- fresh undergraduate
-- Fresh Graduate
-- Fresher
-- newly Grad student
-- new Graduated Student
-
 ## synonym: hSenid
 - hsenid
-- HSENID
 - hSENID
+- HSENID
 
+## synonym:Development
+- developmnt
+- DEV
+- development
+- dev
+- Developmnt
+- DEv
+- Dev
 
-## lookup: university
-data/lookups/universities.txt
+## synonym:Implementation
+- imple
+- implementaion
 
-##lookup: study_stream
-data/lookups/study_streams.txt
+## regex:age
+- ^([1-9]\d?)?$
 
+## regex:email
+- [^@]+@[^@]+\.[^@]+
+
+## regex:name
+- hello i'm [^\\s]
+- hey i'm [^\\s]
+- hey im [^\\s]
+- hi i'm [^\\s]
+- hi im [^\\s]
+- my name is [^\\s]
+
+## regex:phone
+- ^(?:0|94|\+94|0094)?(?:(11|21|23|24|25|26|27|31|32|33|34|35|36|37|38|41|45|47|51|52|54|55|57|63|65|66|67|81|91)(0|2|3|4|5|7|9)|7(0|1|2|5|6|7|8)\d)\d{6}$
+
+## lookup:universities.txt
+  data/lookups/universities.txt
+
+## lookup:study_streams.txt
+  data/lookups/study_streams.txt
